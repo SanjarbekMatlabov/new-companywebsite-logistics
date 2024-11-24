@@ -10,7 +10,7 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <title>Responsive sidebar Menu | Dark/Light Mode - Bedimcode</title>
+      <title>Eco Service Group LLCC</title>
    </head>
    <body>
       <!--=============== HEADER ===============-->
@@ -26,7 +26,7 @@
       </header>
 
       <!--=============== SIDEBAR ===============-->
-      <nav class="sidebar" id="sidebar">
+      <nav class="sidebar" id="sidebar" style="z-index: 100;">
          <div class="sidebar__container">
             <div class="sidebar__user">
                <!-- <div class="sidebar__img">
@@ -111,9 +111,27 @@
       </nav>
 
       <!--=============== MAIN ===============-->
-      <main class="main container" id="main">
-         <h1>Sidebar Menu</h1>
-         
+      <main class="main container" id="main" style="overflow-x: hidden;">
+         <section class="section hero" aria-label="home" id="home">
+            <div class="container" id="headerid">
+              <div class="hero-content">
+                <h2 class="h1 hero-title">
+                  Get your packages delivered anywhere in America.
+                </h2>
+    
+                <p class="hero-text">
+                  EXPLORE | ORDER | DELIVER
+                </p>
+                <div class="btndiv">
+                   <a href="contact.html" class="btn-outline" style="margin-top:  40px;">Get in touch</a>   
+                </div>
+               </div>
+              <img src="./assets/img/trcuk2.png" alt="" class="truck" >
+            </div>
+          </section>
+          <div id="myScrollbar" style="display: none;">
+            <div id="scrollbarThumb"></div>
+          </div>
       </main>
       
       <!--=============== MAIN JS ===============-->

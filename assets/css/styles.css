@@ -12,7 +12,7 @@
   --text-color: hsl(0, 0%, 0%);
   --body-color: hsl(228, 100%, 99%);
   --shadow-color: hsla(228, 80%, 4%, .1);
-  --tooltip-color:hsl(228, 85%, 63%);
+  --tooltip-color: hsl(228, 85%, 63%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -43,7 +43,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+  }
 
 body {
   font-family: var(--body-font);
@@ -141,8 +141,10 @@ body.dark-theme {
   color: var(--title-color);
   cursor: pointer;
 }
-.sidebar__list ul li .tooltip{
+
+.sidebar__list ul li .tooltip {
   position: absolute;
+  color: white;
   left: calc(100% + 10px);
   /* top: 50%; */
   transform: translateY(-50%);
@@ -151,9 +153,11 @@ body.dark-theme {
   background-color: var(--tooltip-color);
   opacity: 0;
 }
-.sidebar__list ul li:hover .tooltip{
+
+.sidebar__list ul li:hover .tooltip {
   opacity: 1;
 }
+
 /*=============== SIDEBAR ===============*/
 .sidebar {
   position: fixed;
@@ -170,7 +174,7 @@ body.dark-theme {
   transition: left .4s, background-color .4s, width .4s;
 }
 
-.sidebar__container, 
+.sidebar__container,
 .sidebar__content {
   display: flex;
   flex-direction: column;
@@ -238,7 +242,7 @@ body.dark-theme {
   margin-bottom: 1.5rem;
 }
 
-.sidebar__list, 
+.sidebar__list,
 .sidebar__actions {
   display: grid;
   row-gap: 1.5rem;
@@ -304,41 +308,265 @@ body.dark-theme {
   background-color: var(--first-color);
 }
 
+/* ==================header=================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding-block-start: calc(var(--section-padding) + 85px);
+  z-index: 1;
+}
+
+#rasmuchun img {
+  z-index: -1;
+  position: absolute;
+  width: 600px;
+  transform: translate(50% 50%);
+  /* right: 40px;
+  top: 840px; */
+}
+
+.truck {
+  position: absolute;
+  z-index: -1;
+  right: 21%;
+  top: 33%;
+  animation: way 1s ease-in-out;
+}
+@keyframes way{
+  0%{
+    right: 0%;
+  }
+  100%{
+    right: 21%;
+  }
+}
+
+.hero-content {
+  color: black;
+  text-align: center;
+  padding: 30px;
+}
+
+.hero-title .span {
+  color: var(--dark-orange);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-700);
+}
+
+.hero-text {
+  margin-block: 20px 15px;
+}
+
+.btn-outline {
+  max-width: max-content;
+  font-size: var(--fs-9);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  border: 1px solid var(--first-color);
+  border-radius: 10px;
+  padding: 8px 20px;
+  transition: var(--transition);
+  background-color: var(--dark-orange);
+  color: var(--text-color);
+}
+
+.btn-outline:is(:hover, :focus) {
+  background-color: var(--first-color);
+  color: white;
+}
+.btndiv{
+  margin-top: 90px;
+}
+#myScrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+#scrollbarThumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 360px) {
   .header__container {
     padding-inline: 1rem;
   }
-
   .sidebar {
     width: max-content;
   }
-  .sidebar__info, 
+
+  .sidebar__info,
   .sidebar__link span {
     display: none;
   }
-  .sidebar__user, 
-  .sidebar__list, 
+
+  .sidebar__user,
+  .sidebar__list,
   .sidebar__actions {
     justify-content: center;
   }
-  .sidebar__user, 
+
+  .sidebar__user,
   .sidebar__link {
     grid-template-columns: max-content;
   }
+
   .sidebar__user {
     padding: 0;
   }
+
   .sidebar__link {
     padding-inline: 2rem;
   }
+
   .sidebar__title {
     padding-inline: .5rem;
     margin-inline: auto;
   }
 }
-
+@media(max-width:1100px){
+  .btndiv{
+    margin-top: 0px;
+  }
+  .truck {
+    right: 18%;
+    top: 60%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:950px){
+  .hero-content {
+    color: var(--title-color);
+  }
+  .truck {
+    right: 18%;
+    top: 80%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:640px){
+  .truck {
+    right: 18%;
+    top: 80%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:529px){
+  .truck {
+    right: 18%;
+    top: 80%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:380px){
+  .truck {
+    right: 18%;
+    top: 90%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:376px){
+  .truck {
+    right: 18%;
+    top: 90%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:821px){
+  .truck {
+    right: 18%;
+    top: 60%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
+@media(max-width:1024px){
+  .truck {
+    right: 18%;
+    top: 60%;
+    animation: way 3s ease-in infinite;
+  }
+  @keyframes way{
+    0%{
+      right: -110%;
+    }
+    100%{
+      right: 100%;
+    }
+  } 
+}
 /* For large devices */
 @media screen and (min-width: 1150px) {
   .header {
@@ -350,6 +578,7 @@ body.dark-theme {
     height: calc(var(--header-height) + 2rem);
     padding-inline: 2rem;
   }
+
   .header__logo {
     order: 1;
   }
@@ -359,11 +588,13 @@ body.dark-theme {
     width: 316px;
     margin: 1rem;
   }
-  .sidebar__info, 
+
+  .sidebar__info,
   .sidebar__link span {
     transition: opacity .4s;
   }
-  .sidebar__user, 
+
+  .sidebar__user,
   .sidebar__title {
     transition: padding .4s;
   }
@@ -372,14 +603,17 @@ body.dark-theme {
   .show-sidebar {
     width: 90px;
   }
+
   .show-sidebar .sidebar__user {
     padding-left: 1.25rem;
   }
+
   .show-sidebar .sidebar__title {
     padding-left: 0;
     margin-inline: auto;
   }
-  .show-sidebar .sidebar__info, 
+
+  .show-sidebar .sidebar__info,
   .show-sidebar .sidebar__link span {
     opacity: 0;
   }
