@@ -1,140 +1,425 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <title>Eco Service Group LLCC</title>
-   </head>
-   <body>
-      <!--=============== HEADER ===============-->
-      <header class="header" id="header">
-         <div class="header__container">
-            <a href="#" class="header__logo">
-               <span>Eco Service Group LLCC</span>
-            </a>
-            <button class="header__toggle" id="header-toggle">
-               <i class="ri-menu-line"></i>
-            </button>
-         </div>
-      </header>
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
-      <!--=============== SIDEBAR ===============-->
-      <nav class="sidebar" id="sidebar" style="z-index: 100;">
-         <div class="sidebar__container">
-            <div class="sidebar__user">
-               <!-- <div class="sidebar__img">
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+   <title>Eco Service Group LLCC</title>
+</head>
+
+<body>
+   <style>
+      .ri-menu-line {
+         display: none;
+      }
+
+      .left-pd .ri-menu-line {
+         display: initial;
+      }
+
+      .left-pd .close-icon {
+         display: none;
+      }
+
+      @media (max-width:1150px) {
+         .ri-menu-line {
+            display: initial;
+         }
+
+         .close-icon {
+            display: none;
+         }
+
+         .left-pd .ri-menu-line {
+            display: none;
+         }
+
+         .left-pd .close-icon {
+            display: initial;
+         }
+      }
+   </style>
+   <!--=============== HEADER ===============-->
+   <header class="header" id="header">
+      <div class="header__container">
+         <h3 class="header__logo">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 615-538-4774</span>
+         </h3>
+         <a href="#" class="header__logo">
+            <span>Eco Service Group LLCC</span>
+         </a>
+         <button class="header__toggle" id="header-toggle">
+            <i class="ri-menu-line"></i><span class="close-icon">✕</span>
+         </button>
+      </div>
+   </header>
+
+   <!--=============== SIDEBAR ===============-->
+   <nav class="sidebar" id="sidebar" style="z-index: 100;">
+      <div class="sidebar__container">
+         <div class="sidebar__user">
+            <!-- <div class="sidebar__img">
                   <img src="assets/img/perfil.png" alt="image">
                </div> -->
-               <div class="sidebar__info">
-                  <h3>Eco Service Group LLCC</h3>
+            <div class="sidebar__info">
+               <h3>Eco Service Group LLCC</h3>
+            </div>
+         </div>
+
+         <div class="sidebar__content">
+            <div>
+               <h3 class="sidebar__title">SERVICES</h3>
+
+               <div class="sidebar__list">
+                  <ul>
+                     <li>
+                        <a href="#" class="sidebar__link active-link">
+                           <i class="fa-solid fa-house"></i>
+                           <span>Home</span>
+                        </a>
+                        <span class="tooltip">Home</span>
+                     </li>
+                  </ul>
+                  <ul>
+                     <li>
+                        <a href="#about" class="sidebar__link">
+                           <i class="fa-solid fa-circle-info"></i>
+                           <span>About Us</span>
+                        </a>
+                        <span class="tooltip">About</span>
+                     </li>
+                  </ul>
+                  <ul>
+                     <li>
+                        <a href="#shipping" class="sidebar__link">
+                           <i class="fa-solid fa-truck-fast"></i>
+                           <span>Shipping</span>
+                        </a>
+                        <span class="tooltip">Shipping</span>
+                     </li>
+                  </ul>
+                  <ul>
+                     <li>
+                        <a href="#vacation" class="sidebar__link">
+                           <i class="fa-solid fa-address-card"></i>
+                           <span>Vacations</span>
+                        </a>
+                        <span class="tooltip">Vacations</span>
+                     </li>
+                  </ul>
+                  <ul>
+                     <li>
+                        <a href="#contact" class="sidebar__link">
+                           <i class="fa-solid fa-phone"></i>
+                           <span>Contact Us</span>
+                        </a>
+                        <span class="tooltip">Contact</span>
+                     </li>
+                  </ul>
                </div>
             </div>
+         </div>
 
-            <div class="sidebar__content">
-               <div>
-                  <h3 class="sidebar__title">SERVICES</h3>
+         <div class="sidebar__actions">
+            <button>
+               <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
+                  <span>Theme</span>
+               </i>
+            </button>
+         </div>
+      </div>
+   </nav>
 
-                  <div class="sidebar__list">
-                     <ul>
-                        <li>
-                           <a href="#" class="sidebar__link active-link">
-                              <i class="fa-solid fa-house"></i>
-                              <span>Home</span>
+   <!--=============== MAIN ===============-->
+   <main class="main" id="main" style="overflow-x: hidden;">
+      <section class="section hero" aria-label="home" id="home">
+         <div class="container" id="headerid">
+            <div class="hero-content">
+               <h2 class="h1 hero-title">
+                  Get your loads delivered anywhere in America.
+               </h2>
+
+               <p class="hero-text">
+                  EXPLORE | ORDER | DELIVER
+               </p>
+               <div class="btndiv">
+                  <a href="contact.html" class="btn-outline" style="margin-top:  40px;">Get in touch</a>
+               </div>
+            </div>
+            <img src="./assets/img/trcuk2.png" alt="" class="truck">
+         </div>
+      </section>
+      <div id="myScrollbar" style="display: none;">
+         <div id="scrollbarThumb"></div>
+      </div>
+      <section class="section2 blog" aria-label="blog" id="blog">
+         <div class="container">
+            <h2 class="h2 section-title" style="color: white;">Your journey starts here</h2>
+         </div>
+      </section>
+      <section class="section about" id="about" aria-label="about">
+         <div class="container">
+            <div class="about-content">
+               <h2 class="title-about">Your shipments arrive safe and sound, on time, with <span
+                     style="color: hsl(228, 85%, 63%);">our service</span> </h2>
+
+               <p class="section-text">
+               </p>
+               <h3 style="padding-bottom: 60px;">We take the stress out of logistics. Our comprehensive and reliable
+                  service ensures your deliveries arrive on time and without a hitch. Get started now and enjoy peace of
+                  mind.</h3>
+               <a href="#about" class="btn-outline">Get started</a>
+
+            </div>
+
+         </div>
+      </section>
+      <section class="section2 blog" aria-label="blog" id="about">
+         <div class="container">
+            <h1 class="section-title" style="color: white;">Our Foundation for Success</h1>
+         </div>
+      </section>
+      <section class="section shipping" id="" aria-label="shipping">
+         <div class="container">
+            <div class="container4">
+               <div class="value-card">
+                  <h3>Reliable Delivery, Every Time.</h3>
+                  <p>We're committed to getting your cargo where it needs to be, when it needs to be there. With years
+                     of experience and cutting-edge tracking technology, we ensure on-time delivery and the safety of
+                     your shipment</p>
+               </div>
+
+               <div class="value-card">
+                  <h3>Expertise in every shipment.</h3>
+                  <p>Our team of highly trained and experienced professionals is dedicated to providing top-tier
+                     service. We meticulously handle each shipment to meet the highest quality standards.</p>
+               </div>
+
+               <div class="value-card">
+                  <h3>Dedicated to your satisfaction.</h3>
+                  <p>We go the extra mile to understand and meet your needs. Our commitment to open and effective
+                     communication ensures a smooth and positive experience.</p>
+               </div>
+               <div class="value-card">
+                  <h3>Working together towards a better future.</h3>
+                  <p>We believe in the power of collaboration. By fostering mutual respect and trust with our customers,
+                     partners, and employees, we create a unified team dedicated to achieving shared goals. </p>
+               </div>
+               <div class="value-card">
+                  <h3>United for positive change.</h3>
+                  <p>We work together, with our employees, partners, and community, to address social challenges and
+                     contribute to the betterment of society..</p>
+               </div>
+
+            </div>
+      </section>
+      <section class="section2 blog" aria-label="blog" id="shipping" style="color: white;">
+         <div class="container">
+            <h2 class="section-title">Shipping</h2>
+            <h2 class="section-subtitle">We ship to every corner of the USA!</h2>
+            <p class="section-text">
+               Shipping made easy. Our expert team takes care of the details.
+            </p>
+         </div>
+      </section>
+      <section class="section shipping" id="" aria-label="shipping">
+         <div class="container">
+            <ul class="service-list grid-list">
+               <li class="imageuchun">
+                  <div class="shipping-card shipping-card1">
+                     <h3 class="h2 card-title">
+                        Basic Delivery
+                     </h3>
+                     <p class="card-text">
+                        Trust us with your everyday shipping. Our basic delivery service provides a dependable and
+                        affordable solution for getting your goods where they need to be. We prioritize safety, on-time
+                        delivery, and cost-efficiency..
+                     </p>
+                     <a href="#contact" class="btn-outline">
+                        <span class="span">Request a quote</span>
+                     </a>
+                  </div>
+               </li>
+               <li class="imageuchun2">
+                  <div class="shipping-card shipping-card2">
+                     <h3 class="h2 card-title">
+                        Quick Trailer Swap
+                     </h3>
+                     <p class="card-text">
+                        Boost your efficiency with our drop and hook service. Say goodbye to loading and unloading
+                        delays. Simply swap pre-loaded trailers at our convenient locations and keep your drivers
+                        moving. This minimizes downtime, maximizes productivity, and improves your bottom line.
+                     </p>
+                     <a href="#contact" class="btn-outline">
+                        <span class="span">Request a quote</span>
+                     </a>
+
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="qiyshaygan-div">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+            <img src="./assets/img/forshipping.png" alt="no">
+         </div>
+      </section>
+      <section class="section2 blog" aria-label="blog" id="about">
+         <div class="container">
+            <h1 class="section-title" style="color: white;">Vacations</h1>
+         </div>
+      </section>
+      <section class="section blog" aria-label="blog" id="vacation">
+         <div class="container">
+            <h2 class="h2 section-title">Ready to get behind the wheel and steer your career in a new direction? We're
+               hiring drivers!</h2>
+
+            <p class="section-text">
+
+            </p>
+
+            <ul class="blog-list grid-list">
+
+               <li>
+                  <div class="blog-card">
+                     <img src="./assets/img/hiring.png" alt="">
+                  </div>
+               </li>
+
+               <li style="display: flex; flex-direction: column;">
+                  <div class="blog-card">
+                     <div class="card-content">
+                        <h3 class="h3 card-text" style="margin-top: 40px;">
+                           <a href="#">
+                              Company drivers
                            </a>
-                           <span class="tooltip">Home</span>
-                        </li>
-                     </ul>   
-                     <ul>
-                        <li>
-                           <a href="#" class="sidebar__link">
-                              <i class="fa-solid fa-circle-info"></i>
-                              <span>About Us</span>
-                           </a>
-                           <span class="tooltip">About</span>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li>
-                           <a href="#" class="sidebar__link">
-                              <i class="fa-solid fa-truck-fast"></i>
-                              <span>Shipping</span>
-                           </a>
-                           <span class="tooltip">Shipping</span>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li>
-                           <a href="#" class="sidebar__link">
-                              <i class="fa-solid fa-truck-front"></i>
-                              <span>Driving</span>
-                           </a>
-                           <span class="tooltip">Driving</span>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li>
-                           <a href="#" class="sidebar__link">
-                              <i class="fa-solid fa-phone"></i>
-                              <span>Contact Us</span>
-                           </a>
-                           <span class="tooltip">Contact</span>
-                        </li>
-                     </ul>
-                     <ul>
-                        <li>
-                           <a href="#" class="sidebar__link">
-                              <i class="fa-solid fa-address-card"></i>
-                              <span>Vacations</span>
-                           </a>
-                           <span class="tooltip">Vacations</span>
-                        </li>
-                     </ul>
+                        </h3>
+                        <div class="box">
+                           <ul>
+                              <li>Our drivers are the engine that keeps us running. Your commitment and hard work make
+                                 all the difference. See how we're rewarding your dedication.</li>
+                           </ul>
+                           <ul>
+                              Become part of something bigger! At our company, we're a tight-knit team of drivers who
+                              value each other and love what we do. We offer great pay, top-notch benefits, and a
+                              supportive atmosphere where your contributions are truly appreciated. We'll set you up for
+                              success with the tools and resources you need to excel on the road.
+                           </ul>
+                        </div>
+
+                     </div>
+                  </div>
+                  <a href="#contact " class="btn-outline" style="margin-top: 50px;">
+                     <span class="span">Contact Us</span>
+                  </a>
+               </li>
+
+            </ul>
+
+         </div>
+      </section>
+      <section class="section2 blog" aria-label="blog" id="contact">
+         <div class="container">
+            <h1 class="section-title" style="color: white;">Contact Us</h1>
+         </div>
+      </section>
+      <section>
+         <div class="contact">
+            <div class="content">
+               <p>If you have any questions, don't be afraid to ask. We will answer you within 24 hours. Fill out the
+                  form below.</p>
+            </div>
+
+            <div class="containers">
+               <div class="contact_form">
+                  <form id="myForm" name="submit-to-google-sheet">
+                     <h2>Send Message</h2>
+                     <div class="input_box">
+                        <input type="text" required name="Phone-number">
+                        <span>Phone number</span>
+                     </div>
+                     <div class="input_box">
+                        <input type="email" required name="Email">
+                        <span>Email</span>
+                     </div>
+                     <div class="input_box">
+                        <textarea required name="Message"></textarea>
+                        <span>Type Message</span>
+                     </div>
+                     <button class=""><input type="submit" value="Send" class="btn-outline"></button>
+                  </form>
+               </div>
+
+               <div class="contact_info">
+                  <div class="flex">
+                     <div class="box">
+                        <div class="icon">
+                           <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="text">
+                           <h3>Phone</h3>
+                           <p>+1 615-538-4774</p>
+                        </div>
+                     </div>
+                     <div class="box">
+                        <div class="icon">
+                           <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                           <h3>Email</h3>
+                           <p>ecoservicegroupllc@gmail.com</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="box">
+                     <div class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                     </div>
+                     <div class="text">
+                        <h3>Address</h3>
+                        <p>6001 Jackson Square Blvd Ste 400, La Vergne, TN 37086
+                        </p>
+                     </div>
+                  </div>
+                  <div class="box map">
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d806.7383059474554!2d-86.57539300635666!3d36.02143564509432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88640d498058f4c5%3A0xdf8dc4ed261d7855!2s6001%20Jackson%20Square%20Blvd%20%23%20400%2C%20La%20Vergne%2C%20TN%2037086%2C%20%D0%A1%D0%A8%D0%90!5e0!3m2!1sru!2s!4v1732464724939!5m2!1sru!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </div>
                </div>
             </div>
-
-            <div class="sidebar__actions">
-               <button>
-                  <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
-                     <span>Theme</span>
-                  </i>
-               </button>
-            </div>
          </div>
-      </nav>
+      </section>
+   </main>
 
-      <!--=============== MAIN ===============-->
-      <main class="main container" id="main" style="overflow-x: hidden;">
-         <section class="section hero" aria-label="home" id="home">
-            <div class="container" id="headerid">
-              <div class="hero-content">
-                <h2 class="h1 hero-title">
-                  Get your packages delivered anywhere in America.
-                </h2>
-    
-                <p class="hero-text">
-                  EXPLORE | ORDER | DELIVER
-                </p>
-                <div class="btndiv">
-                   <a href="contact.html" class="btn-outline" style="margin-top:  40px;">Get in touch</a>   
-                </div>
-               </div>
-              <img src="./assets/img/trcuk2.png" alt="" class="truck" >
-            </div>
-          </section>
-          <div id="myScrollbar" style="display: none;">
-            <div id="scrollbarThumb"></div>
-          </div>
-      </main>
-      
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+</body>
+
 </html>
